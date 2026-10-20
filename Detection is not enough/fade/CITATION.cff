@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper."
+title: "Detection Is Not Enough: Reasoning Traces as Testable Program Hypotheses"
+authors:
+  - family-names: Hegde
+    given-names: Vaidehi
+    affiliation: "Indian Institute of Technology (Indian School of Mines) Dhanbad"
+    email: vaidehihegde05@gmail.com
+repository-code: "https://github.com/S2V3/fade"
+version: paper-v1
