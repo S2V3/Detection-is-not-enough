@@ -1,6 +1,6 @@
 # Reproducing the paper's numbers
 
-All test-set numbers below are recomputed by `src/check_paper_numbers.py` from the stored outputs in `results/paper_v1/test/`, which is a copy of the run `store_ctctest_audit2_a1_final_20260903_144740` on the `results` branch. Correctness labels come from `mpv_per_question.jsonl`, written by `score_mpv.py` after the reference answers were opened once, at the end of the run.
+All test-set numbers below are recomputed by `src/check_paper_numbers.py` from the stored outputs in `results/paper_v1/test/`, which is a copy of the run `store_ctctest_audit2_a1_final_20260903_144740` in the [`results` branch of S2V3/fade](https://github.com/S2V3/fade/tree/results). Correctness labels come from `mpv_per_question.jsonl`, written by `score_mpv.py` after the reference answers were opened once, at the end of the run.
 
 | Paper result | Value | Recomputed from |
 |---|---|---|
@@ -17,4 +17,4 @@ All test-set numbers below are recomputed by `src/check_paper_numbers.py` from t
 | Detection AUROC on the 847 testable traces | p_wrong 0.740, probe 0.698, equal-weight blend 0.773 (0.769–0.778 over weights 0.1–0.9) | `results.jsonl` + `mpv_probes.jsonl`, re-executed with `mpv.py` |
 | Training-split calibration table | 10% +20.4 ... 40% +44.7 ... 100% −158.5 | rows recorded in `run_ctc_validate.py` (audit D67), recomputed as TP·R − FP·D with R = 16.1%, D = 76.5% |
 
-Numbers that come from the training run (failure taxonomy, repair rates on the 1,068 training failures, out-of-fold detector estimates) are produced by `kaggle_run.py`, `diagnosis.py` and `ctc_train2.py` from the training stores on the `results` branch; see `results/README.md`.
+Numbers that come from the training run (failure taxonomy, repair rates on the 1,068 training failures, out-of-fold detector estimates) are produced by `kaggle_run.py`, `diagnosis.py` and `ctc_train2.py` from the training stores in the run archive; see `results/README.md`.

@@ -1,6 +1,6 @@
-# Run archive (`results` branch)
+# Run archive
 
-Every run pushes its outputs to the `results` branch of this repository as a folder named `store_<run>_<status>_<timestamp>`. A run writes an `inprogress` folder while it runs and a `final_<timestamp>` folder when it finishes; when several `final` folders exist for one run, the latest is the complete one. The notebooks restore interrupted runs from this layout, so the branch is left as it is.
+The raw outputs of every run are kept in the [`results` branch of S2V3/fade](https://github.com/S2V3/fade/tree/results). Each run pushed its outputs there as a folder named `store_<run>_<status>_<timestamp>`. A run writes an `inprogress` folder while it runs and a `final_<timestamp>` folder when it finishes; when several `final` folders exist for one run, the latest is the complete one. The notebooks restore interrupted runs from this layout, so the branch is left as it is.
 
 The run used for the paper's test results is `store_ctctest_audit2_a1_final_20260903_144740`; a copy is in [`paper_v1/test/`](paper_v1/test/).
 

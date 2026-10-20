@@ -27,7 +27,7 @@ This recomputes, from the stored test outputs in [`results/paper_v1/`](results/p
 ## Repository layout
 
 ```
-fade/
+Detection-is-not-enough/
 ├── README.md               this file
 ├── REPRODUCE.md            paper number -> script -> stored output
 ├── requirements.txt
@@ -39,7 +39,7 @@ fade/
 └── results/
     ├── paper_v1/           the stored outputs behind the paper's test results
     ├── legacy_exports/     flat exports of earlier runs, kept for history
-    └── README.md           index of the full run archive on the `results` branch
+    └── README.md           index of the full run archive (see below)
 ```
 
 The modules in `src/` import each other by name, so they are kept in one directory and every script is run from inside `src/`.
@@ -73,9 +73,11 @@ The experiments ran on Kaggle (one NVIDIA T4) with `meta-llama/Llama-2-7b-chat-h
 | metamorphic probe and scoring | — | `run_mpv.py`, `score_mpv.py`, `blend_check.py` |
 | selection policies | `fade_selector.ipynb` | `selector.py`, `score_selector.py` |
 
-The notebooks expect two Kaggle secrets: `HF_TOKEN` (to download the model) and `GH_TOKEN` (to push run outputs to the `results` branch). No token is stored in this repository.
+The notebooks expect two Kaggle secrets: `HF_TOKEN` (to download the model) and `GH_TOKEN` (to push run outputs to the run archive described below). No token is stored in this repository.
 
-The trained detector (`ctc2.joblib`, 85 MB) is kept on the `results` branch at `results/ctc2_audit2_latest/`.
+## Run archive
+
+Every run pushed its raw outputs, checkpoint by checkpoint, to the [`results` branch of S2V3/fade](https://github.com/S2V3/fade/tree/results) (62 runs, about 550 MB). This repository holds the code and the outputs behind the paper; [`results/README.md`](results/README.md) indexes the archive. The trained detector (`ctc2.joblib`, 85 MB) is in the archive at `results/ctc2_audit2_latest/`.
 
 ## Citation
 
